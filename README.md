@@ -6,7 +6,6 @@ A clean, responsive web app for quickly checking **current weather** for any cit
 - 🔎 Search any city (uses Open‑Meteo Geocoding API)
 - 🌡️ Live current conditions from Open‑Meteo (no API key needed)
 - 🔁 °C/°F toggle (also updates wind to km/h or mph)
-- 📍 "Use my location" (with browser geolocation)
 - ✅ Graceful error handling + loading states
 - 📱 Fully responsive, accessible UI (Tailwind CSS)
 
