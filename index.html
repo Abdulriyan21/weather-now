@@ -284,7 +284,7 @@
             <button class="get-weather-btn" onclick="getWeather()">Get Weather</button>
         </div>
 
-        <div class="weather-card">
+        <div class="weather-card" id="weatherCard" style="display: none;">
             <div class="location">Kadapa, Andhra Pradesh, India</div>
             <div class="update-time">Updated: 29/08/2025, 19:45:00</div>
             
@@ -393,6 +393,19 @@
 
         // Update UI with weather data
         function updateWeatherUI(data) {
+            // Show the weather card with animation
+            const weatherCard = document.getElementById('weatherCard');
+            weatherCard.style.display = 'block';
+            weatherCard.style.opacity = '0';
+            weatherCard.style.transform = 'translateY(20px)';
+            
+            // Animate the card appearance
+            setTimeout(() => {
+                weatherCard.style.transition = 'all 0.5s ease';
+                weatherCard.style.opacity = '1';
+                weatherCard.style.transform = 'translateY(0)';
+            }, 100);
+            
             document.querySelector('.location').textContent = data.location;
             document.querySelector('.status-text').textContent = data.condition;
             document.querySelector('.weather-icon').textContent = data.icon;
@@ -713,8 +726,9 @@
 
         // Initialize with default location
         document.addEventListener('DOMContentLoaded', function() {
-            // Update initial display
-            updateWeatherUI(weatherData);
+            // Keep weather card hidden on initial load
+            const weatherCard = document.getElementById('weatherCard');
+            weatherCard.style.display = 'none';
         });
     </script>
 </body>
